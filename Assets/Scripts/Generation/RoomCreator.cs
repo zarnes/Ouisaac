@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RoomCreator : MonoBehaviour
+namespace Ouisaac
 {
-    // Start is called before the first frame update
-    void Start()
+    public class RoomCreator : MonoBehaviour
     {
-        
-    }
+        public void CreateRoom(Room room, Node node, Vector2 position)
+        {
+            GameObject roomGo = Instantiate(room.Prefab, new Vector3(position.x, position.y), Quaternion.identity);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+            List<Transform> doorsTf = new List<Transform>();
+            //doorsTf = roomGo.tag
+
+            for (int i = 0; i < 4; ++i)
+            {
+                Door door = null;
+                door.SetState(Door.STATE.CLOSED);
+            }
+        }
     }
 }

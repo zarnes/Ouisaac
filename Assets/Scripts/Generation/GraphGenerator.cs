@@ -39,6 +39,18 @@ namespace Ouisaac
                 if (i != length)
                     parent = Nodes[Nodes.Count - 1];
 
+                bool possible = false;
+                for (int weightsI = 0; weightsI < 4; ++weightsI)
+                {
+                    if (parent.weights[weightsI] != 0)
+                        possible = true;
+                }
+                if (!possible)
+                {
+                    Debug.LogWarning("Can't finish path, missing " + i + " iterations");
+                    return;
+                }
+
                 int maxRand = 0;
                 for (int randI = 0; randI < 4; ++randI)
                     maxRand += parent.weights[randI];

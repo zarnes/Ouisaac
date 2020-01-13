@@ -14,7 +14,7 @@ public class Door : MonoBehaviour {
 
     public const string PLAYER_NAME = "Player";
 
-    Utils.ORIENTATION _orientation = Utils.ORIENTATION.NONE;
+    private Utils.ORIENTATION _orientation = Utils.ORIENTATION.NONE;
 	public Utils.ORIENTATION Orientation { get { return _orientation; } }
 
 	STATE _state = STATE.OPEN;
