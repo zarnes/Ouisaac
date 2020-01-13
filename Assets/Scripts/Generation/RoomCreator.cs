@@ -6,7 +6,7 @@ namespace Ouisaac
 {
     public class RoomCreator : MonoBehaviour
     {
-        public /*GameObject*/ void CreateRoom(Room room, Node node, Vector2 position)
+        public void CreateRoom(Room room, Node node, Vector2 position)
         {
             GameObject roomGo = Instantiate(room.Prefab, new Vector3(position.x, position.y), Quaternion.identity);
 
@@ -14,8 +14,8 @@ namespace Ouisaac
 
             foreach (Door door in doors)
             {
-                //int directionIdx = -1; TODO set door orientation before that
-                int directionIdx = 0;
+                door.SetOrientation();
+                int directionIdx = -1;
                 switch (door.Orientation)
                 {
                     case Utils.ORIENTATION.NORTH:
@@ -32,18 +32,16 @@ namespace Ouisaac
                         break;
                 }
 
-                bool open = node.directions[directionIdx];
-                /*if (open)
+                //bool open = node.directions[directionIdx];
+                /*bool open = node.doors[directionIdx] != Door.STATE.CLOSED;
+                if (open)
                     door.SetState(Door.STATE.OPEN);
                 else
-                    door.SetState(Door.STATE.CLOSED);*/
+                    door.SetState(Door.STATE.WALL);*/
 
-                door.SetState(Door.STATE.OPEN);
+                door.SetState(node.doors[directionIdx]);
 
             }
-
-            /*return roomGo;*/
-
         }
     }
 }

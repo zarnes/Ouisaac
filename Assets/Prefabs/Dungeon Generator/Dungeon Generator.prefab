@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4199129019392413629}
   - component: {fileID: 4199129019392413630}
   - component: {fileID: 8049226991828415960}
+  - component: {fileID: 323662061}
+  - component: {fileID: 6356312976965770906}
   m_Layer: 0
   m_Name: Dungeon Generator
   m_TagString: Untagged
@@ -45,9 +47,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scale: {x: 11, y: 9}
-  Seed: 2
-  Rooms: 11
-  Nodes: []
+  Seed: 28
+  Rooms: 10
+  Nodes:
+  - Start: 1
+    End: 0
+    ContainKey: 0
+    X: 0
+    Y: 0
+    doors: 02000000020000000200000002000000
+    weights: 19000000190000001900000019000000
+  probaDoor: 0
 --- !u!114 &8049226991828415960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,3 +77,29 @@ MonoBehaviour:
     RightDoor: 0
     DownDoor: 0
     LeftDoor: 0
+--- !u!114 &323662061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199129019392413631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c8d56cae5c92143b0c75b280adda7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6356312976965770906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4199129019392413631}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 611d714ff54e7964fb80e7f8809383ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Increment: 1
+  IncrementTime: 0.5

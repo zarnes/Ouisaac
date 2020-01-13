@@ -33,8 +33,10 @@ public class Door : MonoBehaviour {
 
 	public void Start()
     {
-        _orientation = Utils.AngleToOrientation(-transform.eulerAngles.z);
-		if(closedGo.gameObject.activeSelf)
+        if (_orientation == Utils.ORIENTATION.NONE)
+            _orientation = Utils.AngleToOrientation(-transform.eulerAngles.z);
+
+        if (closedGo.gameObject.activeSelf)
 		{
 			SetState(STATE.CLOSED);
 		} else if (openGo.gameObject.activeSelf)
@@ -48,6 +50,11 @@ public class Door : MonoBehaviour {
 			SetState(STATE.SECRET);
 		}
 	}
+
+    public void SetOrientation()
+    {
+        _orientation = Utils.AngleToOrientation(-transform.eulerAngles.z);
+    }
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
