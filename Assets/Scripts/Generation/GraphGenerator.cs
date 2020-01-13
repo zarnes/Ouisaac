@@ -14,6 +14,10 @@ namespace Ouisaac
         private System.Random rnd;
         private RoomsManager roomsManager;
 
+        [Range(0, 1)]
+        public float probaDoor;
+        private int doorClosed;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -26,7 +30,8 @@ namespace Ouisaac
 
             CreatePath(first, Rooms - 1);
             //CreatePath(Nodes[5], 3);
-            CreatePath(Nodes[2], 5);
+            //CreatePath(Nodes[2], 5);
+            CreateSecondaryPath();
         }
 
         void CreatePath(Node start, int length)
@@ -48,6 +53,7 @@ namespace Ouisaac
                 if (!possible)
                 {
                     Debug.LogWarning("Can't finish path, missing " + i + " iterations");
+                    Rooms = i;
                     return;
                 }
 
@@ -145,6 +151,11 @@ namespace Ouisaac
                     Gizmos.DrawLine(new Vector3(X, Y), new Vector3(parentX, parentY));
                 }
             }
+            if (doorClosed != 0)
+            {
+                Gizmos.color = Color.red;
+                Gizmos.DrawWireCube(new Vector3(Nodes[doorClosed].X * Scale.x, Nodes[doorClosed].Y * Scale.y), new Vector3(Scale.x * .9f, Scale.y * .9f));
+            }
         }
 
         public enum Direction
@@ -153,6 +164,14 @@ namespace Ouisaac
             right = 1,
             down = 2,
             left = 3
+        }
+
+        void CreateSecondaryPath()
+        {
+            int proba = (int)(Rooms * probaDoor);
+            int tmpProba = rnd.Next(Rooms - proba); /*Random.Range(proba, Rooms - proba);*/
+            CreatePath(Nodes[tmpProba], 5);
+            doorClosed = rnd.Next(Rooms - 1);
         }
     }
 
