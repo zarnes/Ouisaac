@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GraphGenerator : MonoBehaviour
 {
+    public Vector2 Scale;
     public int Seed;
     public int Rooms = 10;
     public List<Node> Nodes = new List<Node>();
@@ -112,13 +113,21 @@ public class GraphGenerator : MonoBehaviour
 
     private void OnDrawGizmosSelected()
     {
-        foreach(Node node in Nodes)
+        foreach (Node node in Nodes)
         {
             Gizmos.color = Color.white;
-            Gizmos.DrawWireSphere(new Vector3(node.X, node.Y), .2f);
+            float X = node.X * Scale.x;
+            float Y = node.Y * Scale.y;
+            //Gizmos.DrawWireSphere(new Vector3(X, Y), .2f);
+            Gizmos.DrawWireCube(new Vector3(X, Y), new Vector3(Scale.x * .9f, Scale.y * .9f));
 
             if (node.Parent != null)
-                Gizmos.DrawLine(new Vector3(node.X, node.Y), new Vector3(node.Parent.X, node.Parent.Y));
+            {
+                float parentX = node.Parent.X * Scale.x;
+                float parentY = node.Parent.Y * Scale.y;
+
+                Gizmos.DrawLine(new Vector3(X, Y), new Vector3(parentX, parentY));
+            }
         }
     }
 
