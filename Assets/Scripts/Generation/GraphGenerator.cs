@@ -168,14 +168,14 @@ namespace Ouisaac
                     parentX += Scale.x / 2;
                     float parentY = node.Parent.Y * Scale.y;
                     parentY += Scale.y / 2;
-
+                    Gizmos.color = Color.blue;
                     Gizmos.DrawLine(new Vector3(X, Y), new Vector3(parentX, parentY));
                 }
             }
             if (doorClosed != 0)
             {
                 Gizmos.color = Color.red;
-                Gizmos.DrawWireCube(new Vector3(Nodes[doorClosed].X * Scale.x, Nodes[doorClosed].Y * Scale.y), new Vector3(Scale.x * .9f, Scale.y * .9f));
+                Gizmos.DrawWireCube(new Vector3((Nodes[doorClosed].X * Scale.x) + Scale.x/2, (Nodes[doorClosed].Y * Scale.y) + Scale.y /2), new Vector3(Scale.x * .9f, Scale.y * .9f));
             }
 
             Gizmos.color = Color.green;
