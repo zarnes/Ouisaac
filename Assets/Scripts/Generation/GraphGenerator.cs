@@ -15,6 +15,9 @@ namespace Ouisaac
         private RoomsManager roomsManager;
         private RoomCreator creator;
 
+        private Node start;
+        private Node end;
+
         [Range(0, 1)]
         public float probaDoor;
         private int doorClosed;
@@ -26,11 +29,12 @@ namespace Ouisaac
             roomsManager = GetComponent<RoomsManager>();
             creator = GetComponent<RoomCreator>();
 
-            Node first = new Node();
-            first.X = first.Y = 0;
-            Nodes.Add(first);
+            start = new Node();
+            start.X = start.Y = 0;
+            Nodes.Add(start);
 
-            CreatePath(first, Rooms - 1);
+            CreatePath(start, Rooms - 1);
+            end = Nodes[Nodes.Count - 1];
             //CreatePath(Nodes[5], 3);
             //CreatePath(Nodes[2], 5);
 
@@ -45,7 +49,6 @@ namespace Ouisaac
                     creator.CreateRoom(room, node, new Vector2(node.X * Scale.x, node.Y * Scale.y));
                 }
             }
-
         }
 
         void CreatePath(Node start, int length)
@@ -174,6 +177,14 @@ namespace Ouisaac
                 Gizmos.color = Color.red;
                 Gizmos.DrawWireCube(new Vector3(Nodes[doorClosed].X * Scale.x, Nodes[doorClosed].Y * Scale.y), new Vector3(Scale.x * .9f, Scale.y * .9f));
             }
+
+            Gizmos.color = Color.green;
+            Vector2 pos = new Vector2(start.X * Scale.x + Scale.x / 2, start.Y * Scale.y + Scale.y / 2);
+            Gizmos.DrawWireSphere(pos, 2);
+
+            Gizmos.color = Color.red;
+            pos = new Vector2(end.X * Scale.x + Scale.x / 2, end.Y * Scale.y + Scale.y / 2);
+            Gizmos.DrawWireSphere(pos, 2);
         }
 
         public enum Direction
