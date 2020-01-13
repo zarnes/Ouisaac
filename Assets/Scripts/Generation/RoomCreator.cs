@@ -6,7 +6,7 @@ namespace Ouisaac
 {
     public class RoomCreator : MonoBehaviour
     {
-        public void CreateRoom(Room room, Node node, Vector2 position)
+        public /*GameObject*/ void CreateRoom(Room room, Node node, Vector2 position)
         {
             GameObject roomGo = Instantiate(room.Prefab, new Vector3(position.x, position.y), Quaternion.identity);
 
@@ -33,11 +33,17 @@ namespace Ouisaac
                 }
 
                 bool open = node.directions[directionIdx];
-                if (open)
+                /*if (open)
                     door.SetState(Door.STATE.OPEN);
                 else
-                    door.SetState(Door.STATE.CLOSED);
+                    door.SetState(Door.STATE.CLOSED);*/
+
+                door.SetState(Door.STATE.OPEN);
+
             }
+
+            /*return roomGo;*/
+
         }
     }
 }

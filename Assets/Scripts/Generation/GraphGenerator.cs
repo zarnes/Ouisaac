@@ -39,14 +39,22 @@ namespace Ouisaac
             //CreatePath(Nodes[2], 5);
 
             CreateSecondaryPath();
-
-
-            foreach(Node node in Nodes)
+            
+            for (int i = Nodes.Count - 1; i >= 0; --i)
+            //foreach(Node node in Nodes)
             {
+                Node node = Nodes[i];
                 Room room = roomsManager.Find(rnd, node.directions[0], node.directions[1], node.directions[2], node.directions[3]);
                 if (room != null)
                 {
-                    creator.CreateRoom(room, node, new Vector2(node.X * Scale.x, node.Y * Scale.y));
+                    /*GameObject roomGo = */creator.CreateRoom(room, node, new Vector2(node.X * Scale.x, node.Y * Scale.y));
+                    /*if (node == start)
+                    {
+                        Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+                        CameraFollow cf = GameObject.FindObjectOfType<CameraFollow>();
+                        cf.target = player.gameObject;
+                        cf.RefreshTargetPosition();
+                    }*/
                 }
             }
         }

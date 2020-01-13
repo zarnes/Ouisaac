@@ -1877,7 +1877,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.08, y: 10.7, z: -10}
+  m_LocalPosition: {x: 5.5, y: 4.5, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5094,7 +5094,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962054244}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.82, y: 9.28, z: 0}
+  m_LocalPosition: {x: 5, y: 5, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children:
   - {fileID: 921746953}
@@ -5838,12 +5838,17 @@ PrefabInstance:
     - target: {fileID: 4199129019392413630, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Seed
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4199129019392413631, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: m_Name
       value: Dungeon Generator
+      objectReference: {fileID: 0}
+    - target: {fileID: 4199129019392413631, guid: d479c51b1998dee42b61750eb5bd2483,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d479c51b1998dee42b61750eb5bd2483, type: 3}

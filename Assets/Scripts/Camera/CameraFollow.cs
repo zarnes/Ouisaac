@@ -25,7 +25,7 @@ public class CameraFollow : MonoBehaviour {
         transform.position = (Vector3)position;
     }
 
-	void RefreshTargetPosition()
+	public void RefreshTargetPosition()
 	{
 		if (target == null)
 			return;
