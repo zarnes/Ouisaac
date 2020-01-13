@@ -10,13 +10,33 @@ namespace Ouisaac
         {
             GameObject roomGo = Instantiate(room.Prefab, new Vector3(position.x, position.y), Quaternion.identity);
 
-            List<Transform> doorsTf = new List<Transform>();
-            //doorsTf = roomGo.tag
+            Door[] doors = roomGo.GetComponentsInChildren<Door>();
 
-            for (int i = 0; i < 4; ++i)
+            foreach (Door door in doors)
             {
-                Door door = null;
-                door.SetState(Door.STATE.CLOSED);
+                //int directionIdx = -1; TODO set door orientation before that
+                int directionIdx = 0;
+                switch (door.Orientation)
+                {
+                    case Utils.ORIENTATION.NORTH:
+                        directionIdx = 0;
+                        break;
+                    case Utils.ORIENTATION.EAST:
+                        directionIdx = 1;
+                        break;
+                    case Utils.ORIENTATION.SOUTH:
+                        directionIdx = 2;
+                        break;
+                    case Utils.ORIENTATION.WEST:
+                        directionIdx = 3;
+                        break;
+                }
+
+                bool open = node.directions[directionIdx];
+                if (open)
+                    door.SetState(Door.STATE.OPEN);
+                else
+                    door.SetState(Door.STATE.CLOSED);
             }
         }
     }

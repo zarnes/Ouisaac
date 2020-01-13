@@ -13,12 +13,14 @@ namespace Ouisaac
 
         private System.Random rnd;
         private RoomsManager roomsManager;
+        private RoomCreator creator;
 
         // Start is called before the first frame update
         void Start()
         {
             rnd = new System.Random(Seed);
             roomsManager = GetComponent<RoomsManager>();
+            creator = GetComponent<RoomCreator>();
 
             Node first = new Node();
             first.X = first.Y = 0;
@@ -26,7 +28,16 @@ namespace Ouisaac
 
             CreatePath(first, Rooms - 1);
             //CreatePath(Nodes[5], 3);
-            CreatePath(Nodes[2], 5);
+            //CreatePath(Nodes[2], 5);
+
+            foreach(Node node in Nodes)
+            {
+                Room room = roomsManager.Find(rnd, node.directions[0], node.directions[1], node.directions[2], node.directions[3]);
+                if (room != null)
+                {
+                    creator.CreateRoom(room, node, new Vector2(node.X * Scale.x, node.Y * Scale.y));
+                }
+            }
         }
 
         void CreatePath(Node start, int length)
@@ -134,13 +145,17 @@ namespace Ouisaac
             {
                 Gizmos.color = Color.white;
                 float X = node.X * Scale.x;
+                X += Scale.x / 2;
                 float Y = node.Y * Scale.y;
+                Y += Scale.y / 2;
                 Gizmos.DrawWireCube(new Vector3(X, Y), new Vector3(Scale.x * .9f, Scale.y * .9f));
 
                 if (node.Parent != null)
                 {
                     float parentX = node.Parent.X * Scale.x;
+                    parentX += Scale.x / 2;
                     float parentY = node.Parent.Y * Scale.y;
+                    parentY += Scale.y / 2;
 
                     Gizmos.DrawLine(new Vector3(X, Y), new Vector3(parentX, parentY));
                 }
