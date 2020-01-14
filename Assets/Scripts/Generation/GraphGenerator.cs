@@ -167,13 +167,30 @@ namespace Ouisaac
             for (int i = Nodes.Count - 1; i >= 0; --i)
             {
                 Node node = Nodes[i];
-                RoomPrefabs room = roomsManager.Find(
-                    rnd,
-                    node.doors[0] != Door.STATE.WALL,
-                    node.doors[1] != Door.STATE.WALL,
-                    node.doors[2] != Door.STATE.WALL,
-                    node.doors[3] != Door.STATE.WALL
-                );
+                RoomPrefabs room = null;
+                //KEY ROOMS
+                if (node.ContainKey)
+                {
+                    room = roomsManager.Find(
+                        rnd,
+                        node.doors[0] != Door.STATE.WALL,
+                        node.doors[1] != Door.STATE.WALL,
+                        node.doors[2] != Door.STATE.WALL,
+                        node.doors[3] != Door.STATE.WALL,
+                        true
+                    );
+                }
+                else
+                {
+                    //NORMAL ROOMS
+                    room = roomsManager.Find(
+                        rnd,
+                        node.doors[0] != Door.STATE.WALL,
+                        node.doors[1] != Door.STATE.WALL,
+                        node.doors[2] != Door.STATE.WALL,
+                        node.doors[3] != Door.STATE.WALL
+                    );
+                }
 
                 if (room != null)
                 {

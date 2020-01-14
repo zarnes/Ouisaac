@@ -9,7 +9,7 @@ namespace Ouisaac
     {
         public List<RoomPrefabs> Rooms;
 
-        public RoomPrefabs Find(System.Random rnd, bool top = false, bool right = false, bool down = false, bool left = false)
+        public RoomPrefabs Find(System.Random rnd, bool top = false, bool right = false, bool down = false, bool left = false, bool needKey = false)
         {
             List<RoomPrefabs> possibleRooms = new List<RoomPrefabs>();
             foreach(RoomPrefabs room in Rooms)
@@ -32,6 +32,9 @@ namespace Ouisaac
                 if (left && room.LeftDoor == RoomPrefabs.DoorPossibility.Never)
                     continue;
                 if (!left && room.LeftDoor == RoomPrefabs.DoorPossibility.Always)
+                    continue;
+
+                if (room.hasKey != needKey)
                     continue;
 
                 possibleRooms.Add(room);
@@ -73,6 +76,7 @@ namespace Ouisaac
         public DoorPossibility RightDoor;
         public DoorPossibility DownDoor;
         public DoorPossibility LeftDoor;
+        public bool hasKey;
 
         public enum DoorPossibility
         {
