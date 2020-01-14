@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scale: {x: 11, y: 9}
-  Seed: 28
+  Seed: 0
   Rooms: 10
   Nodes:
   - Start: 1
@@ -73,10 +73,31 @@ MonoBehaviour:
   Rooms:
   - Prefab: {fileID: 6841501172659082621, guid: 7c15e6392d7e3274990b57b309faa24c,
       type: 3}
+    Weight: 100
     TopDoor: 0
     RightDoor: 0
     DownDoor: 0
     LeftDoor: 0
+  - Prefab: {fileID: 478600192581509841, guid: acaf8a7973bc9494f9188fa77f59468a, type: 3}
+    Weight: 100
+    TopDoor: 0
+    RightDoor: 0
+    DownDoor: 0
+    LeftDoor: 0
+  - Prefab: {fileID: 1826994009941185039, guid: 5b9eaa79502df434e8484b21abc92068,
+      type: 3}
+    Weight: 100
+    TopDoor: 0
+    RightDoor: 0
+    DownDoor: 0
+    LeftDoor: 0
+  - Prefab: {fileID: 2751459857429984926, guid: a0c1cb6fe7708ba4dbbbab699394b7f4,
+      type: 3}
+    Weight: 1000
+    TopDoor: 1
+    RightDoor: 1
+    DownDoor: 2
+    LeftDoor: 2
 --- !u!114 &323662061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,10 +117,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4199129019392413631}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 611d714ff54e7964fb80e7f8809383ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Verbose: 0
   Increment: 1
   IncrementTime: 0.5
