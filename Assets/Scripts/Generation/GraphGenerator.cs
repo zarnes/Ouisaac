@@ -26,7 +26,7 @@ namespace Ouisaac
             roomsManager = GetComponent<RoomsManager>();
             creator = GetComponent<RoomCreator>();
 
-            GenerateGraph(false);
+            GenerateGraph(true);
         }
 
         private void Update()
