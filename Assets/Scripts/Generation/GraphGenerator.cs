@@ -129,42 +129,62 @@ namespace Ouisaac
                 if (count > 20)
                     break;
             }
-            //Check Directions          
+            //Check Directions  
+            List<Direction> directions_tmp = new List<Direction>();
             Node node_tmp = Nodes.Find(x => x.X == Nodes[tmp].X - 1 && x.Y == Nodes[tmp].Y); //Left
             if (node_tmp == null)
             {
-                node_tmp = SpawnNode(Nodes[tmp], Direction.left);
-                possibleRooms.Add(node_tmp);
+                //node_tmp = SpawnNode(Nodes[tmp], Direction.left);
+                //possibleRooms.Add(node_tmp);
+                directions_tmp.Add(Direction.left);
                 node_tmp = null;
             }
+            node_tmp = null;
             node_tmp = Nodes.Find(x => x.Y == Nodes[tmp].Y + 1 &&  x.X == Nodes[tmp].X); // Up
             if (node_tmp == null)
             {
-                node_tmp = SpawnNode(Nodes[tmp], Direction.up);
-                possibleRooms.Add(node_tmp);
+                //node_tmp = SpawnNode(Nodes[tmp], Direction.up);
+                //possibleRooms.Add(node_tmp);
+                directions_tmp.Add(Direction.up);
                 node_tmp = null;
             }
+            node_tmp = null;
             node_tmp = Nodes.Find(x => x.X == Nodes[tmp].X + 1 && x.Y == Nodes[tmp].Y); //Right
             if (node_tmp == null)
             {
-                node_tmp = SpawnNode(Nodes[tmp], Direction.right);
-                possibleRooms.Add(node_tmp);
+                //node_tmp = SpawnNode(Nodes[tmp], Direction.right);
+                //possibleRooms.Add(node_tmp);
+                directions_tmp.Add(Direction.right);
                 node_tmp = null;
             }
+            node_tmp = null;
             node_tmp = Nodes.Find(x => x.Y == Nodes[tmp].Y - 1 && x.X == Nodes[tmp].X); //Down
             if (node_tmp == null)
             {
-                node_tmp = SpawnNode(Nodes[tmp], Direction.down);
-                possibleRooms.Add(node_tmp);
+                //node_tmp = SpawnNode(Nodes[tmp], Direction.down);
+                //possibleRooms.Add(node_tmp);
+                directions_tmp.Add(Direction.down);
                 node_tmp = null;
             }
-            if (possibleRooms.Count > 0)
+            node_tmp = null;
+            if (directions_tmp.Count > 0)
             {
-                int tmp_rand = Random.Range(0, possibleRooms.Count - 1);
-                secretRoom = possibleRooms[tmp_rand];
+                int tmp_rand = Random.Range(0, directions_tmp.Count - 1);
+                //secretRoom = possibleRooms[tmp_rand];
+                secretRoom = SpawnNode(Nodes[tmp], directions_tmp[tmp_rand]);
                 Nodes.Add(secretRoom);
                 possibleRooms.Clear();
-            }else
+
+                if (secretRoom.Y < secretRoom.Parent.Y)
+                    secretRoom.doors[0] = secretRoom.Parent.doors[2] = Door.STATE.SECRET;
+                if (secretRoom.Y > secretRoom.Parent.Y)
+                    secretRoom.doors[2] = secretRoom.Parent.doors[0] = Door.STATE.SECRET;
+                if (secretRoom.X < secretRoom.Parent.X)
+                    secretRoom.doors[1] = secretRoom.Parent.doors[3] = Door.STATE.SECRET;
+                if (secretRoom.X > secretRoom.Parent.X)
+                    secretRoom.doors[3] = secretRoom.Parent.doors[1] = Door.STATE.SECRET;
+            }
+            else
             {
                 Debug.LogWarning("No secret Room found");
             }
@@ -199,7 +219,7 @@ namespace Ouisaac
             newNode.X = X;
             newNode.Y = Y;
             newNode.Parent = parent;
-
+            
             switch (direction)
             {
                 case Direction.up:
@@ -336,9 +356,11 @@ namespace Ouisaac
                 Gizmos.color = Color.red;
                 Gizmos.DrawWireCube(new Vector3((Nodes[doorClosed].X * Scale.x) + Scale.x/2, (Nodes[doorClosed].Y * Scale.y) + Scale.y /2), new Vector3(Scale.x * .9f, Scale.y * .9f));
             }
-
-            Gizmos.color = Color.cyan;
-            Gizmos.DrawWireSphere(new Vector3((secretRoom.X * Scale.x) + Scale.x / 2, (secretRoom.Y * Scale.y) + Scale.y / 2), 2);
+            if (secretRoom != null)
+            {
+                Gizmos.color = Color.cyan;
+                Gizmos.DrawWireSphere(new Vector3((secretRoom.X * Scale.x) + Scale.x / 2, (secretRoom.Y * Scale.y) + Scale.y / 2), 2);
+            }
         }
 
         void CreateSecondaryPath()
