@@ -169,10 +169,10 @@ namespace Ouisaac
                 Node node = Nodes[i];
                 Room room = roomsManager.Find(
                     rnd,
-                    node.doors[0] != Door.STATE.CLOSED,
-                    node.doors[1] != Door.STATE.CLOSED,
-                    node.doors[2] != Door.STATE.CLOSED,
-                    node.doors[3] != Door.STATE.CLOSED
+                    node.doors[0] != Door.STATE.WALL,
+                    node.doors[1] != Door.STATE.WALL,
+                    node.doors[2] != Door.STATE.WALL,
+                    node.doors[3] != Door.STATE.WALL
                 );
 
                 if (room != null)

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 namespace Ouisaac
 {
@@ -39,8 +40,27 @@ namespace Ouisaac
             if (possibleRooms.Count == 0)
                 return null;
 
-            int rand = rnd.Next(possibleRooms.Count);
-            return possibleRooms[rand];
+            return WeightedRandom(possibleRooms, rnd);
+
+            /*int rand = rnd.Next(possibleRooms.Count);
+            return possibleRooms[rand];*/
+        }
+
+        private Room WeightedRandom(List<Room> rooms, System.Random rnd)
+        {
+            int maxWeight = rooms.Select(r => r.Weight).Sum(); ;
+            int randomWeight = rnd.Next(maxWeight);
+
+            foreach(Room room in rooms)
+            {
+                if (randomWeight <= room.Weight)
+                    return room;
+
+                randomWeight -= room.Weight;
+            }
+
+            Debug.LogError("Waighted random failed");
+            return null;
         }
     }
 
@@ -48,6 +68,7 @@ namespace Ouisaac
     public class Room
     {
         public GameObject Prefab;
+        public int Weight = 100;
         public DoorPossibility TopDoor;
         public DoorPossibility RightDoor;
         public DoorPossibility DownDoor;
