@@ -20,6 +20,9 @@ namespace Ouisaac
         public float probaDoor;
         private int doorClosed;
 
+        List<Node> possibleRooms = new List<Node>();
+        Node secretRoom;
+
         // Start is called before the first frame update
         void Start()
         {
@@ -31,11 +34,11 @@ namespace Ouisaac
 
         private void Update()
         {
-            if (oldSeed != Seed)
+            /*if (oldSeed != Seed)
             {
                 oldSeed = Seed;
                 GenerateGraph(false);
-            }
+            }*/
         }
 
         private void GenerateGraph(bool draw)
@@ -52,6 +55,8 @@ namespace Ouisaac
             Nodes[Nodes.Count - 1].End = true;
 
             CreateSecondaryPath();
+
+            CreateSecretRoom();
 
             if (draw)
                 DrawRooms();
@@ -111,6 +116,58 @@ namespace Ouisaac
             }
 
             return created;
+        }
+
+        void CreateSecretRoom()
+        {
+            int count = 0;
+            int tmp = Random.Range(1, Nodes.Count - 1);
+            while (Nodes[tmp].ContainKey)
+            {
+                tmp = Random.Range(1, Nodes.Count - 1);
+                ++count;
+                if (count > 20)
+                    break;
+            }
+            //Check Directions          
+            Node node_tmp = Nodes.Find(x => x.X == Nodes[tmp].X - 1 && x.Y == Nodes[tmp].Y); //Left
+            if (node_tmp == null)
+            {
+                node_tmp = SpawnNode(Nodes[tmp], Direction.left);
+                possibleRooms.Add(node_tmp);
+                node_tmp = null;
+            }
+            node_tmp = Nodes.Find(x => x.Y == Nodes[tmp].Y + 1 &&  x.X == Nodes[tmp].X); // Up
+            if (node_tmp == null)
+            {
+                node_tmp = SpawnNode(Nodes[tmp], Direction.up);
+                possibleRooms.Add(node_tmp);
+                node_tmp = null;
+            }
+            node_tmp = Nodes.Find(x => x.X == Nodes[tmp].X + 1 && x.Y == Nodes[tmp].Y); //Right
+            if (node_tmp == null)
+            {
+                node_tmp = SpawnNode(Nodes[tmp], Direction.right);
+                possibleRooms.Add(node_tmp);
+                node_tmp = null;
+            }
+            node_tmp = Nodes.Find(x => x.Y == Nodes[tmp].Y - 1 && x.X == Nodes[tmp].X); //Down
+            if (node_tmp == null)
+            {
+                node_tmp = SpawnNode(Nodes[tmp], Direction.down);
+                possibleRooms.Add(node_tmp);
+                node_tmp = null;
+            }
+            if (possibleRooms.Count > 0)
+            {
+                int tmp_rand = Random.Range(0, possibleRooms.Count - 1);
+                secretRoom = possibleRooms[tmp_rand];
+                Nodes.Add(secretRoom);
+                possibleRooms.Clear();
+            }else
+            {
+                Debug.LogWarning("No secret Room found");
+            }
         }
 
         Node SpawnNode(Node parent, Direction direction)
@@ -200,7 +257,7 @@ namespace Ouisaac
         }
 
         private void OnDrawGizmosSelected()
-        {
+        {           
             foreach (Node node in Nodes)
             {
                 Gizmos.color = Color.white;
@@ -279,6 +336,9 @@ namespace Ouisaac
                 Gizmos.color = Color.red;
                 Gizmos.DrawWireCube(new Vector3((Nodes[doorClosed].X * Scale.x) + Scale.x/2, (Nodes[doorClosed].Y * Scale.y) + Scale.y /2), new Vector3(Scale.x * .9f, Scale.y * .9f));
             }
+
+            Gizmos.color = Color.cyan;
+            Gizmos.DrawWireSphere(new Vector3((secretRoom.X * Scale.x) + Scale.x / 2, (secretRoom.Y * Scale.y) + Scale.y / 2), 2);
         }
 
         void CreateSecondaryPath()
