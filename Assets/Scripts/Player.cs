@@ -21,6 +21,7 @@ public class Player : MonoBehaviour {
     }
 
 
+
     // Possible orientation for player aiming : 4 direction, 8 direction or free direction (for analogic joysticks)
     public enum ORIENTATION
     {
