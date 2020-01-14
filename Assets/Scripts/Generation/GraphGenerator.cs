@@ -167,7 +167,7 @@ namespace Ouisaac
             for (int i = Nodes.Count - 1; i >= 0; --i)
             {
                 Node node = Nodes[i];
-                Room room = roomsManager.Find(
+                RoomPrefabs room = roomsManager.Find(
                     rnd,
                     node.doors[0] != Door.STATE.WALL,
                     node.doors[1] != Door.STATE.WALL,

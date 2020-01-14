@@ -7,31 +7,31 @@ namespace Ouisaac
 {
     public class RoomsManager : MonoBehaviour
     {
-        public List<Room> Rooms;
+        public List<RoomPrefabs> Rooms;
 
-        public Room Find(System.Random rnd, bool top = false, bool right = false, bool down = false, bool left = false)
+        public RoomPrefabs Find(System.Random rnd, bool top = false, bool right = false, bool down = false, bool left = false)
         {
-            List<Room> possibleRooms = new List<Room>();
-            foreach(Room room in Rooms)
+            List<RoomPrefabs> possibleRooms = new List<RoomPrefabs>();
+            foreach(RoomPrefabs room in Rooms)
             {
-                if (top && room.TopDoor == Room.DoorPossibility.Never)
+                if (top && room.TopDoor == RoomPrefabs.DoorPossibility.Never)
                     continue;
-                if (!top && room.TopDoor == Room.DoorPossibility.Always)
-                    continue;
-
-                if (right && room.RightDoor == Room.DoorPossibility.Never)
-                    continue;
-                if (!right && room.RightDoor == Room.DoorPossibility.Always)
+                if (!top && room.TopDoor == RoomPrefabs.DoorPossibility.Always)
                     continue;
 
-                if (down && room.DownDoor == Room.DoorPossibility.Never)
+                if (right && room.RightDoor == RoomPrefabs.DoorPossibility.Never)
                     continue;
-                if (!down && room.DownDoor == Room.DoorPossibility.Always)
+                if (!right && room.RightDoor == RoomPrefabs.DoorPossibility.Always)
                     continue;
 
-                if (left && room.LeftDoor == Room.DoorPossibility.Never)
+                if (down && room.DownDoor == RoomPrefabs.DoorPossibility.Never)
                     continue;
-                if (!left && room.LeftDoor == Room.DoorPossibility.Always)
+                if (!down && room.DownDoor == RoomPrefabs.DoorPossibility.Always)
+                    continue;
+
+                if (left && room.LeftDoor == RoomPrefabs.DoorPossibility.Never)
+                    continue;
+                if (!left && room.LeftDoor == RoomPrefabs.DoorPossibility.Always)
                     continue;
 
                 possibleRooms.Add(room);
@@ -46,12 +46,12 @@ namespace Ouisaac
             return possibleRooms[rand];*/
         }
 
-        private Room WeightedRandom(List<Room> rooms, System.Random rnd)
+        private RoomPrefabs WeightedRandom(List<RoomPrefabs> rooms, System.Random rnd)
         {
             int maxWeight = rooms.Select(r => r.Weight).Sum(); ;
             int randomWeight = rnd.Next(maxWeight);
 
-            foreach(Room room in rooms)
+            foreach(RoomPrefabs room in rooms)
             {
                 if (randomWeight <= room.Weight)
                     return room;
@@ -65,7 +65,7 @@ namespace Ouisaac
     }
 
     [System.Serializable]
-    public class Room
+    public class RoomPrefabs
     {
         public GameObject Prefab;
         public int Weight = 100;

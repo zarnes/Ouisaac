@@ -6,9 +6,12 @@ namespace Ouisaac
 {
     public class RoomCreator : MonoBehaviour
     {
-        public void CreateRoom(Room room, Node node, Vector2 position)
+        public void CreateRoom(RoomPrefabs room, Node node, Vector2 position)
         {
             GameObject roomGo = Instantiate(room.Prefab, new Vector3(position.x, position.y), Quaternion.identity);
+
+            roomGo.GetComponent<Room>().position.x = node.X;
+            roomGo.GetComponent<Room>().position.y = node.Y;
 
             Door[] doors = roomGo.GetComponentsInChildren<Door>();
 
