@@ -284,7 +284,19 @@ namespace Ouisaac
                 }
                 else
                 {
-                    Debug.LogError("Can't find room", gameObject);
+                    Debug.LogError("Can't find room on index " + i, gameObject);
+                    room = roomsManager.Find(
+                    rnd,
+                    node.doors[0] != Door.STATE.WALL,
+                    node.doors[1] != Door.STATE.WALL,
+                    node.doors[2] != Door.STATE.WALL,
+                    node.doors[3] != Door.STATE.WALL,
+                    node.ContainKey,
+                    node.indice != Indice.Direction.None,
+                    node.Start,
+                    node.End,
+                    node.IsSecret
+                );
                 }
             }
         }
