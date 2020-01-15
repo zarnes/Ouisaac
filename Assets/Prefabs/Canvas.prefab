@@ -266,7 +266,7 @@ MonoBehaviour:
   - {fileID: 4568679606890558506}
   - {fileID: 4568679606979098461}
   - {fileID: 4568679607814254701}
-  deathPanel: {fileID: 0}
+  deathPanel: {fileID: 4680776747385610837}
 --- !u!1 &4568679607340919856
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +783,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e93197be1cca7d43b445f203b1b4d5d, type: 3}
+--- !u!1 &4680776747385610837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5295762971692483453, guid: 7e93197be1cca7d43b445f203b1b4d5d,
+    type: 3}
+  m_PrefabInstance: {fileID: 687680733022921000}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1704663555874963056 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2171596502245121880, guid: 7e93197be1cca7d43b445f203b1b4d5d,
