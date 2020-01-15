@@ -24,7 +24,7 @@ public class Potion : MonoBehaviour
         if (collision.attachedRigidbody.gameObject != Player.Instance.gameObject)
             return;
 
-        if(Player.Instance.life < 3)
+        if(Player.Instance.life < 5)
         {
             Player.Instance.life += 1;
             Destroy(transform.gameObject);

@@ -6628,17 +6628,17 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[2].Weight
-      value: 100
+      value: 950
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[3].Weight
-      value: 100
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[0].Weight
-      value: 100
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6649,7 +6649,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[4].Weight
-      value: 100
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6691,7 +6691,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[5].Weight
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6702,7 +6702,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[6].Weight
-      value: 100
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6713,7 +6713,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[7].Weight
-      value: 100
+      value: 950
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6724,7 +6724,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[8].Weight
-      value: 100
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6735,7 +6735,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[9].Weight
-      value: 100
+      value: 850
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6746,7 +6746,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[10].Weight
-      value: 100
+      value: 575
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6790,7 +6790,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[14].Weight
-      value: 100
+      value: 400
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6801,7 +6801,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[15].Weight
-      value: 100
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6812,7 +6812,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[16].Weight
-      value: 100
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6823,7 +6823,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[17].Weight
-      value: 100
+      value: 450
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6834,7 +6834,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[18].Weight
-      value: 100
+      value: 350
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6845,7 +6845,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[19].Weight
-      value: 100
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6856,7 +6856,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[20].Weight
-      value: 100
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6867,7 +6867,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[21].Weight
-      value: 100
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6878,7 +6878,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[22].Weight
-      value: 100
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6889,7 +6889,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[23].Weight
-      value: 100
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6900,7 +6900,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[24].Weight
-      value: 100
+      value: 900
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6911,7 +6911,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[25].Weight
-      value: 100
+      value: 750
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6922,7 +6922,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[26].Weight
-      value: 100
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6933,7 +6933,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[27].Weight
-      value: 100
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6944,7 +6944,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[28].Weight
-      value: 100
+      value: 675
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6955,7 +6955,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[29].Weight
-      value: 100
+      value: 600
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6966,7 +6966,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[30].Weight
-      value: 100
+      value: 800
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -6992,7 +6992,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[31].Weight
-      value: 100
+      value: 700
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -7003,7 +7003,7 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[32].Weight
-      value: 100
+      value: 475
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
@@ -7063,6 +7063,16 @@ PrefabInstance:
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
       propertyPath: Rooms.Array.data[23].LeftDoor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
+        type: 3}
+      propertyPath: Rooms.Array.data[22].DownDoor
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
+        type: 3}
+      propertyPath: Rooms.Array.data[22].LeftDoor
       value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
