@@ -42,17 +42,17 @@ public class Player : MonoBehaviour {
 
     // Life and hit related attributes
     [Header("Life")]
-    public int life = 3;
+    public int life = 5;
     public float invincibilityDuration = 1.0f;
     public float invincibilityBlinkPeriod = 0.2f;
     public LayerMask hitLayers;
     public float knockbackSpeed = 3.0f;
     public float knockbackDuration = 0.5f;
+    private UIheart updateUI;
 
     private float _lastHitTime = float.MinValue;
     private List<SpriteRenderer> _spriteRenderers = new List<SpriteRenderer>();
     private Coroutine _blinkCoroutine = null;
-
 
     // Movement attributes
     [Header("Movement")]
@@ -95,6 +95,7 @@ public class Player : MonoBehaviour {
         Instance = this;
         _body = GetComponent<Rigidbody2D>();
         GetComponentsInChildren<SpriteRenderer>(true, _spriteRenderers);
+        updateUI = GameObject.Find("Canvas").GetComponent<UIheart>();
     }
 
     private void Start()
@@ -241,6 +242,8 @@ public class Player : MonoBehaviour {
         _lastHitTime = Time.time;
 
         life -= (attack != null ? attack.damages : 1);
+        updateUI.LoseUIheart();
+
         if (life <= 0)
         {
             SetState(STATE.DEAD);

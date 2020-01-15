@@ -6,14 +6,21 @@ using System.Linq;
 
 public class BonusMalus : MonoBehaviour
 {
-    /*public Sprite fasterAttack;
+    public Sprite fasterAttack;
     public Sprite slowerAttack;
     public Sprite speedUp;
     public Sprite speedDown;
     public Sprite lifeTouch;
     public Sprite deathTouch;
 
-    public Image itemImage;*/
+    public Image itemImage;
+    public UIheart updateUI;
+
+    private void Awake()
+    {
+        itemImage = GameObject.Find("ItemImage").GetComponent<Image>();
+        updateUI = GameObject.Find("Canvas").GetComponent<UIheart>();
+    }
 
     private enum ITEM
     {
@@ -65,31 +72,42 @@ public class BonusMalus : MonoBehaviour
         {
             case ITEM.FasterAttack:
                 Player.Instance.attackCooldown = 0.15f;
+                itemImage.sprite = fasterAttack;
                 break;
             case ITEM.SlowerAttack:
                 Player.Instance.attackCooldown = 0.45f;
+                itemImage.sprite = slowerAttack;
                 break;
             case ITEM.SpeedUp:
                 Player.Instance.defaultMovement.speedMax = 4.0f;
+                itemImage.sprite = speedUp;
                 break;
             case ITEM.SpeedDown:
                 Player.Instance.defaultMovement.speedMax = 1.0f;
+                itemImage.sprite = speedDown;
                 break;
             case ITEM.LifeTouch:
-                Player.Instance.life += 1;
+                if (Player.Instance.life < 5)
+                {
+                    Player.Instance.life += 1;
+                    updateUI.EarnUIheart();
+                }
+                itemImage.sprite = lifeTouch;
                 break;
             case ITEM.DeathTouch:
                 Player.Instance.ApplyHit(null);
+                itemImage.sprite = deathTouch;
                 break;
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.transform.parent.tag == "Player" && Player.Instance != null)
         {
             RestoreParameters();
             RandomItem();
+            transform.gameObject.SetActive(false);
         }
     }
 }

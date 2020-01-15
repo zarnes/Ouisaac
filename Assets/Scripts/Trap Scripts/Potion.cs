@@ -4,16 +4,11 @@ using UnityEngine;
 
 public class Potion : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private UIheart updateUI;
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        
+        updateUI = GameObject.Find("Canvas").GetComponent<UIheart>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -27,6 +22,7 @@ public class Potion : MonoBehaviour
         if(Player.Instance.life < 5)
         {
             Player.Instance.life += 1;
+            updateUI.EarnUIheart();
             Destroy(transform.gameObject);
         }
         
