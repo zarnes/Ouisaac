@@ -48,11 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scale: {x: 11, y: 9}
   Seed: 0
-  Rooms: 3
+  Rooms: 20
   Nodes:
   - Start: 1
     End: 0
     ContainKey: 0
+    indice: 0
     X: 0
     Y: 0
     doors: 02000000020000000200000002000000
@@ -108,9 +109,9 @@ MonoBehaviour:
       type: 3}
     Weight: 1000
     TopDoor: 1
-    RightDoor: 1
+    RightDoor: 2
     DownDoor: 2
-    LeftDoor: 2
+    LeftDoor: 1
     hasKey: 0
     CanBeStart: 1
     CanBeEnd: 1
