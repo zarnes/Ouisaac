@@ -104,7 +104,7 @@ MonoBehaviour:
     hasKey: 0
     CanBeStart: 1
     CanBeEnd: 1
-    ContainHint: 0
+    ContainHint: 1
   - Prefab: {fileID: 6841501172659082621, guid: 264ad7498fa5f3642a83bcca1572868c,
       type: 3}
     Weight: 900
@@ -126,7 +126,7 @@ MonoBehaviour:
     hasKey: 0
     CanBeStart: 1
     CanBeEnd: 1
-    ContainHint: 0
+    ContainHint: 1
   - Prefab: {fileID: 6841501172659082621, guid: 53719ef3d38421d47ac6e92857132f4e,
       type: 3}
     Weight: 1000
