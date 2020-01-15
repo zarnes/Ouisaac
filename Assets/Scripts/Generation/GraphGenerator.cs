@@ -69,6 +69,7 @@ namespace Ouisaac
             Node parent = start;
 
             int created = 0;
+            int difficulty = start.Difficulty;
             while (created < length)
             {
                 if (created > 0)
@@ -104,6 +105,7 @@ namespace Ouisaac
                             Nodes.Add(newNode);
                             //--remaining;
                             ++created;
+                            ++difficulty;
                             break;
                         }
                         else
@@ -235,6 +237,7 @@ namespace Ouisaac
             newNode.X = X;
             newNode.Y = Y;
             newNode.Parent = parent;
+            newNode.Difficulty = parent.Difficulty + 1;
             
             switch (direction)
             {
@@ -275,7 +278,8 @@ namespace Ouisaac
                     node.indice != Indice.Direction.None,
                     node.Start,
                     node.End,
-                    node.IsSecret
+                    node.IsSecret,
+                    node.Difficulty
                 );
 
                 if (room != null)
@@ -429,6 +433,7 @@ namespace Ouisaac
         
         public Door.STATE[] doors = new Door.STATE[4];
         public int[] weights = new int[4];
+        public int Difficulty = 0;
         public Node Parent = null;
 
         public Node()

@@ -9,7 +9,7 @@ namespace Ouisaac
     {
         public List<RoomPrefabs> Rooms;
 
-        public RoomPrefabs Find(System.Random rnd, bool top = false, bool right = false, bool down = false, bool left = false, bool needKey = false, bool needHint = false, bool isStart = false, bool isEnd = false, bool isSecret = false)
+        public RoomPrefabs Find(System.Random rnd, bool top = false, bool right = false, bool down = false, bool left = false, bool needKey = false, bool needHint = false, bool isStart = false, bool isEnd = false, bool isSecret = false, int difficulty = 1)
         {
             List<RoomPrefabs> possibleRooms = new List<RoomPrefabs>();
             foreach(RoomPrefabs room in Rooms)
@@ -55,23 +55,49 @@ namespace Ouisaac
             if (possibleRooms.Count == 0)
                 return null;
 
-            return WeightedRandom(possibleRooms, rnd);
+            return WeightedRandom(possibleRooms, rnd, difficulty);
 
             /*int rand = rnd.Next(possibleRooms.Count);
             return possibleRooms[rand];*/
         }
 
-        private RoomPrefabs WeightedRandom(List<RoomPrefabs> rooms, System.Random rnd)
+        private RoomPrefabs WeightedRandom(List<RoomPrefabs> rooms, System.Random rnd, int targetDifficulty)
         {
-            int maxWeight = rooms.Select(r => r.Weight).Sum(); ;
+            int maxWeight = 0;
+            foreach (RoomPrefabs room in rooms)
+            {
+                int diffChange = Mathf.Abs(room.Difficulty - targetDifficulty);
+                float diffModifier;
+                if (diffChange != 0)
+                    diffModifier = 1f / diffChange;
+                else
+                    diffModifier = 2;
+                int weight = (int) (room.Weight * diffModifier);
+
+                maxWeight += weight;
+            }
+            //int maxWeight = rooms.Select(r => r.Weight).Sum();
             int randomWeight = rnd.Next(maxWeight);
 
             foreach(RoomPrefabs room in rooms)
             {
-                if (randomWeight <= room.Weight)
+                /*if (randomWeight <= room.Weight)
                     return room;
 
-                randomWeight -= room.Weight;
+                randomWeight -= room.Weight;*/
+
+                int diffChange = Mathf.Abs(room.Difficulty - targetDifficulty);
+                float diffModifier;
+                if (diffChange != 0)
+                    diffModifier = 1f / diffChange;
+                else
+                    diffModifier = 2;
+                int weight = (int)(room.Weight * diffModifier);
+
+                if (randomWeight <= weight)
+                    return room;
+
+                randomWeight -= weight;
             }
 
             Debug.LogError("Weighted random failed");
@@ -84,6 +110,7 @@ namespace Ouisaac
     {
         public GameObject Prefab;
         public int Weight = 100;
+        public int Difficulty = 1;
         public Possibility TopDoor;
         public Possibility RightDoor;
         public Possibility DownDoor;
