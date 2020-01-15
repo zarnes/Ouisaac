@@ -16,12 +16,12 @@ public class Indice : MonoBehaviour
                 v.gameObject.SetActive(false);
                 break;
             case Direction.Horizontal:
-                h.gameObject.SetActive(true);
-                v.gameObject.SetActive(false);
-                break;
-            case Direction.Vertical:
                 h.gameObject.SetActive(false);
                 v.gameObject.SetActive(true);
+                break;
+            case Direction.Vertical:
+                h.gameObject.SetActive(true);
+                v.gameObject.SetActive(false);
                 break;
         }
     }
