@@ -34,11 +34,11 @@ namespace Ouisaac
 
         private void Update()
         {
-            /*if (oldSeed != Seed)
+            if (Application.isEditor && oldSeed != Seed)
             {
                 oldSeed = Seed;
                 GenerateGraph(false);
-            }*/
+            }
         }
 
         private void GenerateGraph(bool draw)
@@ -225,29 +225,18 @@ namespace Ouisaac
             {
                 Node node = Nodes[i];
                 RoomPrefabs room = null;
-                //KEY ROOMS
+
                 if (node.ContainKey)
-                {
-                    room = roomsManager.Find(
-                        rnd,
-                        node.doors[0] != Door.STATE.WALL,
-                        node.doors[1] != Door.STATE.WALL,
-                        node.doors[2] != Door.STATE.WALL,
-                        node.doors[3] != Door.STATE.WALL,
-                        true
-                    );
-                }
-                else
-                {
-                    //NORMAL ROOMS
-                    room = roomsManager.Find(
-                        rnd,
-                        node.doors[0] != Door.STATE.WALL,
-                        node.doors[1] != Door.STATE.WALL,
-                        node.doors[2] != Door.STATE.WALL,
-                        node.doors[3] != Door.STATE.WALL
-                    );
-                }
+                    Debug.Log("coucou");
+
+                room = roomsManager.Find(
+                    rnd,
+                    node.doors[0] != Door.STATE.WALL,
+                    node.doors[1] != Door.STATE.WALL,
+                    node.doors[2] != Door.STATE.WALL,
+                    node.doors[3] != Door.STATE.WALL,
+                    node.ContainKey
+                );
 
                 if (room != null)
                 {
@@ -257,7 +246,10 @@ namespace Ouisaac
         }
 
         private void OnDrawGizmosSelected()
-        {           
+        {
+            if (!Application.isPlaying)
+                return;
+
             foreach (Node node in Nodes)
             {
                 Gizmos.color = Color.white;
