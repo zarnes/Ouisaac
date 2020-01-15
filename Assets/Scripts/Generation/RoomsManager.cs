@@ -9,7 +9,7 @@ namespace Ouisaac
     {
         public List<RoomPrefabs> Rooms;
 
-        public RoomPrefabs Find(System.Random rnd, bool top = false, bool right = false, bool down = false, bool left = false, bool needKey = false, bool needHint = false, bool isStart = false, bool isEnd = false)
+        public RoomPrefabs Find(System.Random rnd, bool top = false, bool right = false, bool down = false, bool left = false, bool needKey = false, bool needHint = false, bool isStart = false, bool isEnd = false, bool isSecret = false)
         {
             List<RoomPrefabs> possibleRooms = new List<RoomPrefabs>();
             foreach(RoomPrefabs room in Rooms)
@@ -44,6 +44,9 @@ namespace Ouisaac
                     continue;
 
                 if (needHint && !room.ContainHint)
+                    continue;
+
+                if (isSecret && !room.IsSecretRoom)
                     continue;
                 
                 possibleRooms.Add(room);
@@ -89,6 +92,7 @@ namespace Ouisaac
         public bool CanBeStart;
         public bool CanBeEnd;
         public bool ContainHint;
+        public bool IsSecretRoom;
 
         public enum Possibility
         {

@@ -172,6 +172,7 @@ namespace Ouisaac
                 int tmp_rand = rnd.Next(directions_tmp.Count - 1);
                 //secretRoom = possibleRooms[tmp_rand];
                 secretRoom = SpawnNode(Nodes[tmp], directions_tmp[tmp_rand]);
+                secretRoom.IsSecret = true;
                 Nodes.Add(secretRoom);
                 possibleRooms.Clear();
 
@@ -273,7 +274,8 @@ namespace Ouisaac
                     node.ContainKey,
                     node.indice != Indice.Direction.None,
                     node.Start,
-                    node.End
+                    node.End,
+                    node.IsSecret
                 );
 
                 if (room != null)
@@ -419,6 +421,7 @@ namespace Ouisaac
         public bool Start = false;
         public bool End = false;
         public bool ContainKey = false;
+        public bool IsSecret = false;
         public Indice.Direction indice = Indice.Direction.None;
 
         public int X = 0;
