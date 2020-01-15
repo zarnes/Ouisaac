@@ -7075,5 +7075,25 @@ PrefabInstance:
       propertyPath: Rooms.Array.data[22].LeftDoor
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
+        type: 3}
+      propertyPath: Rooms.Array.data[0].CanBeStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
+        type: 3}
+      propertyPath: Rooms.Array.data[0].CanBeEnd
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
+        type: 3}
+      propertyPath: Rooms.Array.data[0].ContainHint
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
+        type: 3}
+      propertyPath: Rooms.Array.data[1].ContainHint
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d479c51b1998dee42b61750eb5bd2483, type: 3}
