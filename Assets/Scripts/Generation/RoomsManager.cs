@@ -9,32 +9,35 @@ namespace Ouisaac
     {
         public List<RoomPrefabs> Rooms;
 
-        public RoomPrefabs Find(System.Random rnd, bool top = false, bool right = false, bool down = false, bool left = false, bool needKey = false)
+        public RoomPrefabs Find(System.Random rnd, bool top = false, bool right = false, bool down = false, bool left = false, bool needKey = false, bool needHint = false)
         {
             List<RoomPrefabs> possibleRooms = new List<RoomPrefabs>();
             foreach(RoomPrefabs room in Rooms)
             {
-                if (top && room.TopDoor == RoomPrefabs.DoorPossibility.Never)
+                if (top && room.TopDoor == RoomPrefabs.Possibility.Never)
                     continue;
-                if (!top && room.TopDoor == RoomPrefabs.DoorPossibility.Always)
-                    continue;
-
-                if (right && room.RightDoor == RoomPrefabs.DoorPossibility.Never)
-                    continue;
-                if (!right && room.RightDoor == RoomPrefabs.DoorPossibility.Always)
+                if (!top && room.TopDoor == RoomPrefabs.Possibility.Always)
                     continue;
 
-                if (down && room.DownDoor == RoomPrefabs.DoorPossibility.Never)
+                if (right && room.RightDoor == RoomPrefabs.Possibility.Never)
                     continue;
-                if (!down && room.DownDoor == RoomPrefabs.DoorPossibility.Always)
+                if (!right && room.RightDoor == RoomPrefabs.Possibility.Always)
                     continue;
 
-                if (left && room.LeftDoor == RoomPrefabs.DoorPossibility.Never)
+                if (down && room.DownDoor == RoomPrefabs.Possibility.Never)
                     continue;
-                if (!left && room.LeftDoor == RoomPrefabs.DoorPossibility.Always)
+                if (!down && room.DownDoor == RoomPrefabs.Possibility.Always)
+                    continue;
+
+                if (left && room.LeftDoor == RoomPrefabs.Possibility.Never)
+                    continue;
+                if (!left && room.LeftDoor == RoomPrefabs.Possibility.Always)
                     continue;
 
                 if (room.hasKey != needKey)
+                    continue;
+
+                if (needHint && !room.ContainHint)
                     continue;
 
                 possibleRooms.Add(room);
@@ -72,13 +75,16 @@ namespace Ouisaac
     {
         public GameObject Prefab;
         public int Weight = 100;
-        public DoorPossibility TopDoor;
-        public DoorPossibility RightDoor;
-        public DoorPossibility DownDoor;
-        public DoorPossibility LeftDoor;
+        public Possibility TopDoor;
+        public Possibility RightDoor;
+        public Possibility DownDoor;
+        public Possibility LeftDoor;
         public bool hasKey;
+        public bool CanBeStart;
+        public bool CanBeEnd;
+        public bool ContainHint;
 
-        public enum DoorPossibility
+        public enum Possibility
         {
             Possible,
             Always,
