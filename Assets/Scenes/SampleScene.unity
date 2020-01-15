@@ -705,40 +705,5 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dungeon Generator
       objectReference: {fileID: 0}
-    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
-        type: 3}
-      propertyPath: Rooms.Array.data[19].LeftDoor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
-        type: 3}
-      propertyPath: Rooms.Array.data[19].RightDoor
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
-        type: 3}
-      propertyPath: Rooms.Array.data[1].CanBeStart
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
-        type: 3}
-      propertyPath: Rooms.Array.data[2].CanBeStart
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
-        type: 3}
-      propertyPath: Rooms.Array.data[3].CanBeStart
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
-        type: 3}
-      propertyPath: Rooms.Array.data[4].CanBeStart
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
-        type: 3}
-      propertyPath: Rooms.Array.data[4].Difficulty
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d479c51b1998dee42b61750eb5bd2483, type: 3}

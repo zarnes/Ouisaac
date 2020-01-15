@@ -25,8 +25,6 @@ public class SecretBonus : MonoBehaviour
         Player.Instance.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = bonusSprite;
         Player.Instance.gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>().color = Color.white;
 
-        Destroy(gameObject.transform);
-
-
+        Destroy(gameObject);
     }
 }
