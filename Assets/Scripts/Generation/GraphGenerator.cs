@@ -183,6 +183,21 @@ namespace Ouisaac
                     secretRoom.doors[1] = secretRoom.Parent.doors[3] = Door.STATE.SECRET;
                 if (secretRoom.X > secretRoom.Parent.X)
                     secretRoom.doors[3] = secretRoom.Parent.doors[1] = Door.STATE.SECRET;
+
+
+                List<Node> nodes_tmp = Nodes.FindAll(x => x.Y == secretRoom.Y); // Y axis
+                if (nodes_tmp.Count > 0)
+                {
+                    tmp_rand = rnd.Next(nodes_tmp.Count - 1);
+                    nodes_tmp[tmp_rand].indice = Indice.Direction.Vertical;
+                }
+
+                nodes_tmp = Nodes.FindAll(x => x.X == secretRoom.X); // X axis
+                if (nodes_tmp.Count > 0)
+                {
+                    tmp_rand = rnd.Next(nodes_tmp.Count - 1);
+                    nodes_tmp[tmp_rand].indice = Indice.Direction.Horizontal;
+                }
             }
             else
             {
@@ -397,6 +412,7 @@ namespace Ouisaac
         public bool Start = false;
         public bool End = false;
         public bool ContainKey = false;
+        public Indice.Direction indice = Indice.Direction.None;
 
         public int X = 0;
         public int Y = 0;

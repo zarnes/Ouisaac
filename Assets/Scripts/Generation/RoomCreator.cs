@@ -15,6 +15,8 @@ namespace Ouisaac
             roomScript.position.y = node.Y;
             roomScript.isStartRoom = node.Start;
 
+            roomGo.GetComponentInChildren<Indice>()?.Setup(node.indice);
+
             Door[] doors = roomGo.GetComponentsInChildren<Door>();
 
             foreach (Door door in doors)
