@@ -262,7 +262,7 @@ namespace Ouisaac
                 Node node = Nodes[i];
                 RoomPrefabs room = null;
 
-                if (i == 9)
+                if (i == 7)
                     Debug.Log("coucou");
 
                 room = roomsManager.Find(
@@ -284,7 +284,7 @@ namespace Ouisaac
                 }
                 else
                 {
-                    Debug.LogError("Can't find room", gameObject);
+                    Debug.LogError("Can't find room on index " + i, gameObject);
                 }
             }
         }

@@ -48,11 +48,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scale: {x: 11, y: 9}
   Seed: 3
-  Rooms: 5
+  Rooms: 7
   Nodes:
   - Start: 1
     End: 0
     ContainKey: 0
+    IsSecret: 0
     indice: 0
     X: 0
     Y: 0
@@ -84,6 +85,7 @@ MonoBehaviour:
     CanBeStart: 1
     CanBeEnd: 1
     ContainHint: 1
+    IsSecretRoom: 0
   - Prefab: {fileID: 478600192581509841, guid: acaf8a7973bc9494f9188fa77f59468a, type: 3}
     Weight: 100
     TopDoor: 0
@@ -94,6 +96,7 @@ MonoBehaviour:
     CanBeStart: 1
     CanBeEnd: 1
     ContainHint: 1
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: 230925a7874744744848463850ef90c4,
       type: 3}
     Weight: 950
@@ -102,9 +105,10 @@ MonoBehaviour:
     DownDoor: 0
     LeftDoor: 0
     hasKey: 0
-    CanBeStart: 1
+    CanBeStart: 0
     CanBeEnd: 1
     ContainHint: 1
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: 264ad7498fa5f3642a83bcca1572868c,
       type: 3}
     Weight: 900
@@ -113,9 +117,10 @@ MonoBehaviour:
     DownDoor: 0
     LeftDoor: 0
     hasKey: 0
-    CanBeStart: 1
-    CanBeEnd: 1
+    CanBeStart: 0
+    CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: 7f3d8862757a3cc46bf27b4fd2827d98,
       type: 3}
     Weight: 800
@@ -124,9 +129,10 @@ MonoBehaviour:
     DownDoor: 0
     LeftDoor: 0
     hasKey: 0
-    CanBeStart: 1
-    CanBeEnd: 1
+    CanBeStart: 0
+    CanBeEnd: 0
     ContainHint: 1
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: 53719ef3d38421d47ac6e92857132f4e,
       type: 3}
     Weight: 1000
@@ -138,6 +144,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: 2c1f9690ad8270741a381cc29a07ae40,
       type: 3}
     Weight: 1000
@@ -149,6 +156,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: 7159647c1a92fbb47a27d5ebb832b0e4,
       type: 3}
     Weight: 950
@@ -160,6 +168,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: cc007f6b337f35d4e85334a59dd22a8c,
       type: 3}
     Weight: 900
@@ -171,6 +180,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: ea3cd0caea70c194e93926de58b136f4,
       type: 3}
     Weight: 850
@@ -182,6 +192,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: a1eb5298de8563a41830ed0743c00079,
       type: 3}
     Weight: 575
@@ -193,6 +204,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: e7b4629d000393c4fbc7dee1bcb57172,
       type: 3}
     Weight: 100
@@ -204,6 +216,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 2751459857429984926, guid: 08fda3397b039524ba882215fd5d283c,
       type: 3}
     Weight: 100
@@ -215,6 +228,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 1
+    IsSecretRoom: 0
   - Prefab: {fileID: 2751459857429984926, guid: 35d4e6cec0a39c641b87a0586f3bc410,
       type: 3}
     Weight: 100
@@ -226,6 +240,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 1826994009941185039, guid: 5b9eaa79502df434e8484b21abc92068,
       type: 3}
     Weight: 400
@@ -237,6 +252,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: 2845ba8b7a086414e801bb4c259b999b,
       type: 3}
     Weight: 450
@@ -248,6 +264,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 1
   - Prefab: {fileID: 6841501172659082621, guid: 540934be2ac0a1b4aa50210d065db062,
       type: 3}
     Weight: 450
@@ -259,6 +276,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 1
   - Prefab: {fileID: 6841501172659082621, guid: 72de171a56a77e642b784dedd3cea284,
       type: 3}
     Weight: 450
@@ -270,6 +288,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 1
   - Prefab: {fileID: 6841501172659082621, guid: 69dc3c21748052542bc595d0f5eda5a6,
       type: 3}
     Weight: 350
@@ -281,17 +300,19 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 2751459857429984926, guid: a0c1cb6fe7708ba4dbbbab699394b7f4,
       type: 3}
     Weight: 600
     TopDoor: 0
-    RightDoor: 0
+    RightDoor: 2
     DownDoor: 2
-    LeftDoor: 2
+    LeftDoor: 1
     hasKey: 0
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 2751459857429984926, guid: eb4f21dcef780f8439b2f5c502cc07ba,
       type: 3}
     Weight: 600
@@ -303,6 +324,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 2751459857429984926, guid: eb4f21dcef780f8439b2f5c502cc07ba,
       type: 3}
     Weight: 600
@@ -314,6 +336,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 2751459857429984926, guid: 1e8e4c18e35ae5d439a977a7320e8b4c,
       type: 3}
     Weight: 600
@@ -325,6 +348,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 2751459857429984926, guid: 1e8e4c18e35ae5d439a977a7320e8b4c,
       type: 3}
     Weight: 600
@@ -336,6 +360,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: f9a3e4168425a9347b3c32e188f023b8,
       type: 3}
     Weight: 900
@@ -347,6 +372,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: 751edc61cac9cfa43b35000b35d489d9,
       type: 3}
     Weight: 750
@@ -358,6 +384,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: 74acb031114415141a4fa073410db742,
       type: 3}
     Weight: 800
@@ -369,6 +396,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: e54495a69ddb96c4fb79906958f941ff,
       type: 3}
     Weight: 700
@@ -380,6 +408,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: fe911caa4702df34a85683111ff04743,
       type: 3}
     Weight: 675
@@ -391,6 +420,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: a5a2da32494f8314bad6b132a1c0a383,
       type: 3}
     Weight: 600
@@ -402,6 +432,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: cfa1656638a7032439310afc01cad62d,
       type: 3}
     Weight: 800
@@ -413,6 +444,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: 32841f5648c0fe04fa63523a8bc4ecdb,
       type: 3}
     Weight: 700
@@ -424,6 +456,7 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: b056938e2213b5348adc774fab80c013,
       type: 3}
     Weight: 475
@@ -435,6 +468,19 @@ MonoBehaviour:
     CanBeStart: 0
     CanBeEnd: 0
     ContainHint: 0
+    IsSecretRoom: 0
+  - Prefab: {fileID: 6841501172659082621, guid: d02c78434c0be4943bcdb22d3df72a05,
+      type: 3}
+    Weight: 475
+    TopDoor: 0
+    RightDoor: 0
+    DownDoor: 0
+    LeftDoor: 0
+    hasKey: 0
+    CanBeStart: 0
+    CanBeEnd: 0
+    ContainHint: 0
+    IsSecretRoom: 1
 --- !u!114 &323662061
 MonoBehaviour:
   m_ObjectHideFlags: 0
