@@ -169,7 +169,8 @@ namespace Ouisaac
             node_tmp = null;
             if (directions_tmp.Count > 0)
             {
-                int tmp_rand = Random.Range(0, directions_tmp.Count - 1);
+                int tmp_rand = rnd.Next(directions_tmp.Count - 1);
+                //int tmp_rand = Random.Range(0, directions_tmp.Count - 1);
                 //secretRoom = possibleRooms[tmp_rand];
                 secretRoom = SpawnNode(Nodes[tmp], directions_tmp[tmp_rand]);
                 Nodes.Add(secretRoom);
@@ -246,7 +247,7 @@ namespace Ouisaac
                 Node node = Nodes[i];
                 RoomPrefabs room = null;
 
-                if (node.ContainKey)
+                if (i == Nodes.Count - 1)
                     Debug.Log("coucou");
 
                 room = roomsManager.Find(
