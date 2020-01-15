@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Scale: {x: 11, y: 9}
-  Seed: 3
+  Seed: 8995
   Rooms: 7
   Nodes:
   - Start: 1
@@ -85,7 +85,7 @@ MonoBehaviour:
     LeftDoor: 0
     hasKey: 0
     CanBeStart: 1
-    CanBeEnd: 1
+    CanBeEnd: 0
     ContainHint: 1
     IsSecretRoom: 0
   - Prefab: {fileID: 478600192581509841, guid: acaf8a7973bc9494f9188fa77f59468a, type: 3}
@@ -97,7 +97,7 @@ MonoBehaviour:
     LeftDoor: 0
     hasKey: 0
     CanBeStart: 0
-    CanBeEnd: 1
+    CanBeEnd: 0
     ContainHint: 1
     IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: 230925a7874744744848463850ef90c4,
@@ -110,7 +110,7 @@ MonoBehaviour:
     LeftDoor: 0
     hasKey: 0
     CanBeStart: 0
-    CanBeEnd: 1
+    CanBeEnd: 0
     ContainHint: 1
     IsSecretRoom: 0
   - Prefab: {fileID: 6841501172659082621, guid: 264ad7498fa5f3642a83bcca1572868c,
@@ -516,6 +516,19 @@ MonoBehaviour:
     CanBeEnd: 0
     ContainHint: 0
     IsSecretRoom: 1
+  - Prefab: {fileID: 6841501172659082621, guid: b6cf196013178d146b55d6d9b1841ef6,
+      type: 3}
+    Weight: 99999
+    Difficulty: 7
+    TopDoor: 0
+    RightDoor: 0
+    DownDoor: 0
+    LeftDoor: 0
+    hasKey: 0
+    CanBeStart: 0
+    CanBeEnd: 1
+    ContainHint: 1
+    IsSecretRoom: 0
 --- !u!114 &323662061
 MonoBehaviour:
   m_ObjectHideFlags: 0

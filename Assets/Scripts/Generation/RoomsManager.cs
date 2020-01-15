@@ -40,7 +40,8 @@ namespace Ouisaac
                 if (isStart && !room.CanBeStart)
                     continue;
 
-                if (isEnd && !room.CanBeEnd)
+                //if (isEnd && !room.CanBeEnd)
+                if (isEnd != room.CanBeEnd)
                     continue;
 
                 if (needHint && !room.ContainHint)

@@ -28,6 +28,11 @@ namespace Ouisaac
         // Start is called before the first frame update
         void Start()
         {
+            if (GameManager.Instance != null)
+            {
+                Seed = GameManager.Instance.Seed;
+            }
+
             roomsManager = GetComponent<RoomsManager>();
             creator = GetComponent<RoomCreator>();
 
@@ -188,14 +193,14 @@ namespace Ouisaac
                     secretRoom.doors[3] = secretRoom.Parent.doors[1] = Door.STATE.SECRET;
 
 
-                List<Node> nodes_tmp = Nodes.FindAll(x => x.Y == secretRoom.Y); // Y axis
+                List<Node> nodes_tmp = Nodes.FindAll(x => x.Y == secretRoom.Y && x != secretRoom); // Y axis
                 if (nodes_tmp.Count > 0)
                 {
                     tmp_rand = rnd.Next(nodes_tmp.Count - 1);
                     nodes_tmp[tmp_rand].indice = Indice.Direction.Vertical;
                 }
 
-                nodes_tmp = Nodes.FindAll(x => x.X == secretRoom.X); // X axis
+                nodes_tmp = Nodes.FindAll(x => x.X == secretRoom.X && x != secretRoom); // X axis
                 if (nodes_tmp.Count > 0)
                 {
                     tmp_rand = rnd.Next(nodes_tmp.Count - 1);
@@ -264,10 +269,7 @@ namespace Ouisaac
             {
                 Node node = Nodes[i];
                 RoomPrefabs room = null;
-
-                if (i == 7)
-                    Debug.Log("coucou");
-
+                
                 room = roomsManager.Find(
                     rnd,
                     node.doors[0] != Door.STATE.WALL,
@@ -289,6 +291,19 @@ namespace Ouisaac
                 else
                 {
                     Debug.LogError("Can't find room on index " + i, gameObject);
+                    /*room = roomsManager.Find(
+                    rnd,
+                    node.doors[0] != Door.STATE.WALL,
+                    node.doors[1] != Door.STATE.WALL,
+                    node.doors[2] != Door.STATE.WALL,
+                    node.doors[3] != Door.STATE.WALL,
+                    node.ContainKey,
+                    node.indice != Indice.Direction.None,
+                    node.Start,
+                    node.End,
+                    node.IsSecret,
+                    node.Difficulty
+                );*/
                 }
             }
         }
