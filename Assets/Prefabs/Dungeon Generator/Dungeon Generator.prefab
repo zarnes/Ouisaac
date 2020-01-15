@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Scale: {x: 11, y: 9}
   Seed: 0
-  Rooms: 10
+  Rooms: 3
   Nodes:
   - Start: 1
     End: 0
@@ -58,6 +58,7 @@ MonoBehaviour:
     doors: 02000000020000000200000002000000
     weights: 19000000190000001900000019000000
   probaDoor: 0
+  CanRegraph: 0
 --- !u!114 &8049226991828415960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,12 +79,20 @@ MonoBehaviour:
     RightDoor: 0
     DownDoor: 0
     LeftDoor: 0
+    hasKey: 0
+    CanBeStart: 1
+    CanBeEnd: 1
+    ContainHint: 0
   - Prefab: {fileID: 478600192581509841, guid: acaf8a7973bc9494f9188fa77f59468a, type: 3}
     Weight: 100
     TopDoor: 0
     RightDoor: 0
     DownDoor: 0
     LeftDoor: 0
+    hasKey: 0
+    CanBeStart: 1
+    CanBeEnd: 1
+    ContainHint: 0
   - Prefab: {fileID: 1826994009941185039, guid: 5b9eaa79502df434e8484b21abc92068,
       type: 3}
     Weight: 100
@@ -91,6 +100,10 @@ MonoBehaviour:
     RightDoor: 0
     DownDoor: 0
     LeftDoor: 0
+    hasKey: 0
+    CanBeStart: 1
+    CanBeEnd: 1
+    ContainHint: 0
   - Prefab: {fileID: 2751459857429984926, guid: a0c1cb6fe7708ba4dbbbab699394b7f4,
       type: 3}
     Weight: 1000
@@ -98,6 +111,21 @@ MonoBehaviour:
     RightDoor: 1
     DownDoor: 2
     LeftDoor: 2
+    hasKey: 0
+    CanBeStart: 1
+    CanBeEnd: 1
+    ContainHint: 0
+  - Prefab: {fileID: 2751459857429984926, guid: 84523ffeef2011841aa15087d0c89494,
+      type: 3}
+    Weight: 1000
+    TopDoor: 0
+    RightDoor: 0
+    DownDoor: 0
+    LeftDoor: 0
+    hasKey: 1
+    CanBeStart: 1
+    CanBeEnd: 1
+    ContainHint: 0
 --- !u!114 &323662061
 MonoBehaviour:
   m_ObjectHideFlags: 0

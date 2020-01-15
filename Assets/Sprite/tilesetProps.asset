@@ -1106,7 +1106,7 @@ MonoBehaviour:
     paramContainer:
       m_paramList: []
     prefabData:
-      prefab: {fileID: 745286838405145586, guid: 4350d51f13ac6cb479b568fe10e8ce8e,
+      prefab: {fileID: 7423179743331046696, guid: 6c91334db76755d4fa1c6fe362f02ded,
         type: 3}
       offset: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0}
