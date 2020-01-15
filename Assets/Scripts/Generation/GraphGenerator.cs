@@ -270,7 +270,10 @@ namespace Ouisaac
                     node.doors[1] != Door.STATE.WALL,
                     node.doors[2] != Door.STATE.WALL,
                     node.doors[3] != Door.STATE.WALL,
-                    node.ContainKey
+                    node.ContainKey,
+                    node.indice != Indice.Direction.None,
+                    node.Start,
+                    node.End
                 );
 
                 if (room != null)
