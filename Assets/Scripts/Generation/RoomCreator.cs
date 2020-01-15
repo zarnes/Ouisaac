@@ -10,8 +10,10 @@ namespace Ouisaac
         {
             GameObject roomGo = Instantiate(room.Prefab, new Vector3(position.x, position.y), Quaternion.identity);
 
-            roomGo.GetComponent<Room>().position.x = node.X;
-            roomGo.GetComponent<Room>().position.y = node.Y;
+            Room roomScript = roomGo.GetComponent<Room>();
+            roomScript.position.x = node.X;
+            roomScript.position.y = node.Y;
+            roomScript.isStartRoom = node.Start;
 
             Door[] doors = roomGo.GetComponentsInChildren<Door>();
 
@@ -34,14 +36,7 @@ namespace Ouisaac
                         directionIdx = 3;
                         break;
                 }
-
-                //bool open = node.directions[directionIdx];
-                /*bool open = node.doors[directionIdx] != Door.STATE.CLOSED;
-                if (open)
-                    door.SetState(Door.STATE.OPEN);
-                else
-                    door.SetState(Door.STATE.WALL);*/
-
+                
                 door.SetState(node.doors[directionIdx]);
 
             }

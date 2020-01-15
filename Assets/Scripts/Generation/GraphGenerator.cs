@@ -20,6 +20,8 @@ namespace Ouisaac
         public float probaDoor;
         private int doorClosed;
 
+        public bool CanRegraph;
+
         List<Node> possibleRooms = new List<Node>();
         Node secretRoom;
 
@@ -34,7 +36,7 @@ namespace Ouisaac
 
         private void Update()
         {
-            if (Application.isEditor && oldSeed != Seed)
+            if (Application.isEditor && CanRegraph && oldSeed != Seed)
             {
                 oldSeed = Seed;
                 GenerateGraph(false);
@@ -81,9 +83,7 @@ namespace Ouisaac
                 }
                 if (!possible)
                 {
-                    //Debug.LogWarning("[SEED " + Seed + "] Can't finish path, missing " + remaining + " iterations");
                     Debug.LogWarning("[SEED " + Seed + "] Can't finish path,  (" + created + "/" + length + " iterations), blocked on [" + parent.X + ";" + parent.Y + "]");
-                    //Rooms = i; TODO I may have broke something
                     return created;
                 }
 
@@ -121,10 +121,10 @@ namespace Ouisaac
         void CreateSecretRoom()
         {
             int count = 0;
-            int tmp = Random.Range(1, Nodes.Count - 1);
-            while (Nodes[tmp].ContainKey)
+            int tmp = rnd.Next(1, Nodes.Count - 1);
+            while (Nodes[tmp].ContainKey || Nodes[tmp].End)
             {
-                tmp = Random.Range(1, Nodes.Count - 1);
+                tmp = rnd.Next(1, Nodes.Count - 1);
                 ++count;
                 if (count > 20)
                     break;
@@ -170,7 +170,6 @@ namespace Ouisaac
             if (directions_tmp.Count > 0)
             {
                 int tmp_rand = rnd.Next(directions_tmp.Count - 1);
-                //int tmp_rand = Random.Range(0, directions_tmp.Count - 1);
                 //secretRoom = possibleRooms[tmp_rand];
                 secretRoom = SpawnNode(Nodes[tmp], directions_tmp[tmp_rand]);
                 Nodes.Add(secretRoom);
@@ -359,7 +358,7 @@ namespace Ouisaac
         void CreateSecondaryPath()
         {
             int proba = (int)(Rooms * probaDoor);
-            int tmpProba = rnd.Next(Rooms - proba - 2); /*Random.Range(proba, Rooms - proba);*/
+            int tmpProba = rnd.Next(Rooms - proba - 2);
             int created = CreatePath(Nodes[tmpProba], 5);
             while (created == 0)
             {

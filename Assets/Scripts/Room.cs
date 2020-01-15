@@ -3,18 +3,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Room : MonoBehaviour {
+public class Room : MonoBehaviour
+{
 
     public bool isStartRoom = false;
 	public Vector2Int position = Vector2Int.zero;
 
 	private TilemapGroup _tilemapGroup;
+    private Animator _anim;
 
 	public static List<Room> allRooms = new List<Room>();
 
     void Awake()
     {
 		_tilemapGroup = GetComponentInChildren<TilemapGroup>();
+        _anim = GetComponent<Animator>();
 		allRooms.Add(this);
 	}
 
@@ -23,7 +26,8 @@ public class Room : MonoBehaviour {
 		allRooms.Remove(this);
 	}
 
-	void Start () {
+	void Start ()
+    {
         if(isStartRoom)
         {
             OnEnterRoom();
@@ -36,9 +40,10 @@ public class Room : MonoBehaviour {
         Bounds cameraBounds = _GetWorldRoomBounds();
         cameraFollow.SetBounds(cameraBounds);
 		Player.Instance.EnterRoom(this);
+
+        _anim.SetTrigger("Show");
     }
-
-
+    
     private Bounds _GetLocalRoomBounds()
     {
 		Bounds roomBounds = new Bounds(Vector3.zero, Vector3.zero);
