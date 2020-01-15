@@ -247,6 +247,7 @@ public class Player : MonoBehaviour {
         if (life <= 0)
         {
             SetState(STATE.DEAD);
+            updateUI.YouDied();
         } else {
             if (attack != null && attack.knockbackDuration > 0.0f)
             {
