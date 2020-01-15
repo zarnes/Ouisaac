@@ -716,6 +716,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Death
       objectReference: {fileID: 0}
+    - target: {fileID: 5295762971692483453, guid: 7e93197be1cca7d43b445f203b1b4d5d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6560805567764160396, guid: 7e93197be1cca7d43b445f203b1b4d5d,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
