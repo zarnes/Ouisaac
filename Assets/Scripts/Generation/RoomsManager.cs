@@ -46,7 +46,7 @@ namespace Ouisaac
                 if (needHint && !room.ContainHint)
                     continue;
 
-                if (isSecret && !room.IsSecretRoom)
+                if (isSecret != room.IsSecretRoom)
                     continue;
                 
                 possibleRooms.Add(room);
@@ -74,7 +74,7 @@ namespace Ouisaac
                 randomWeight -= room.Weight;
             }
 
-            Debug.LogError("Waighted random failed");
+            Debug.LogError("Weighted random failed");
             return null;
         }
     }

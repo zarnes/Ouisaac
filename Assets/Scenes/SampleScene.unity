@@ -707,39 +707,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
-      propertyPath: Rooms.Array.size
-      value: 34
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
-        type: 3}
-      propertyPath: Rooms.Array.data[15].IsSecretRoom
+      propertyPath: Rooms.Array.data[19].LeftDoor
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
         type: 3}
-      propertyPath: Rooms.Array.data[16].IsSecretRoom
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
-        type: 3}
-      propertyPath: Rooms.Array.data[17].IsSecretRoom
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
-        type: 3}
-      propertyPath: Rooms.Array.data[33].Prefab
-      value: 
-      objectReference: {fileID: 6841501172659082621, guid: d02c78434c0be4943bcdb22d3df72a05,
-        type: 3}
-    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
-        type: 3}
-      propertyPath: Rooms.Array.data[33].Weight
-      value: 475
-      objectReference: {fileID: 0}
-    - target: {fileID: 8049226991828415960, guid: d479c51b1998dee42b61750eb5bd2483,
-        type: 3}
-      propertyPath: Rooms.Array.data[33].IsSecretRoom
-      value: 1
+      propertyPath: Rooms.Array.data[19].RightDoor
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d479c51b1998dee42b61750eb5bd2483, type: 3}

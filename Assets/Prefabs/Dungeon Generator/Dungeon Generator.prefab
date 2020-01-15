@@ -305,9 +305,9 @@ MonoBehaviour:
       type: 3}
     Weight: 600
     TopDoor: 0
-    RightDoor: 0
+    RightDoor: 2
     DownDoor: 2
-    LeftDoor: 2
+    LeftDoor: 1
     hasKey: 0
     CanBeStart: 0
     CanBeEnd: 0
